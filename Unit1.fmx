@@ -1,0 +1,58 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 295
+  ClientWidth = 640
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 0
+  object EdtParametro: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 3
+    Position.X = 8.000000000000000000
+    Position.Y = 16.000000000000000000
+    Size.Width = 169.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object BtnExecutar: TButton
+    Position.X = 184.000000000000000000
+    Position.Y = 16.000000000000000000
+    TabOrder = 4
+    Text = 'Executar'
+    OnClick = BtnExecutarClick
+  end
+  object MmoResponse: TMemo
+    Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+    DataDetectorTypes = []
+    Position.X = 8.000000000000000000
+    Position.Y = 64.000000000000000000
+    Size.Width = 625.000000000000000000
+    Size.Height = 225.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 5
+    Viewport.Width = 621.000000000000000000
+    Viewport.Height = 221.000000000000000000
+  end
+  object oRestClient: TRESTClient
+    Params = <>
+    HandleRedirects = True
+    Left = 288
+    Top = 16
+  end
+  object oRequest: TRESTRequest
+    Client = oRestClient
+    Params = <>
+    Response = oResponse
+    SynchronizedEvents = False
+    Left = 352
+    Top = 16
+  end
+  object oResponse: TRESTResponse
+    Left = 408
+    Top = 16
+  end
+end
